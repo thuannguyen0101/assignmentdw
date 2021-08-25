@@ -13,13 +13,12 @@ class ProductController extends Controller
         return Product::all();
     }
     public function store(Request $request){
-//        return $request;
         $product = new Product();
         $product->name = $request->name;
         $product->price = $request->price;
-        $product->thumbnail = $request->thumbnail;
+        $product->avatar = $request->avatar;
         $product->save();
-        return   response()->json(
+        return response()->json(
             [
                 'code'=>201,
                 'message'=>'tạo mới sản phẩm thành công'
